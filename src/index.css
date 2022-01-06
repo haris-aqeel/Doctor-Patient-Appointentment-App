@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+ 
+}
+
+
+.filter-appoitment-container #main_loading{
+  height: 0;
+}
+.filter-appoitment-container #main_loading .loading{
+ position: absolute;
+ top: 50%;
+}
+
+.main-home-nav{
+  color: white;
+}
