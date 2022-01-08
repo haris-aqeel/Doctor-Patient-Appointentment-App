@@ -10,7 +10,8 @@ import Patients from './pages/dashboard/patients/Patients';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import NotFoundPage from './pages/NotFoundPage';
 import Chat from "./Chat";
-import Webcam from "./pages/homePagesComponents/WebCam"
+import Webcam from "./pages/homePagesComponents/WebCam";
+import PatientInfo from "./pages/homePagesComponents/DoctorDetails";
 
 const Routes = () => {
   return (
@@ -28,6 +29,8 @@ const Routes = () => {
         <Route path="/signup" component={SignUp} />;
         <Route path="/chat" component={Chat} />;
         <Route path="/webcam" component={Webcam} />;
+        <Route path="/patientinfo" component={PatientInfo} />;
+        
         
         <Route path="*" component={NotFoundPage} />
 

@@ -56,6 +56,10 @@ const HeaderBottom = ({ history }) => {
   const webcam=()=>{
     history.push('/webcam')
   }
+
+  const patient=()=>{
+    history.push('/patientinfo')
+  }
   useEffect(() => {
     if (history.location.pathname === '/create-appointment') {
       setAppointment(true)
@@ -72,6 +76,12 @@ const HeaderBottom = ({ history }) => {
               <p className="py-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi veniam optio
               consenter quod beatae, atque quae ipsam, alias est reprehenderit debitis explicabo itaque pariatur
           nisi!</p>
+
+          <button type="button"
+                onClick={patient}
+                className="btn mybtn">Patient Info</button>
+                <br></br>
+                <br></br>
               <button type="button"
                 onClick={routeDecide}
                 className="btn mybtn">GET APPOINTMENT</button>

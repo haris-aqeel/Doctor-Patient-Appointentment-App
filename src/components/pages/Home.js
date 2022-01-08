@@ -13,7 +13,7 @@ const Home = () => {
       
       <section className="header-bottom-content-aria">
         <div className="container">
-          <div className="row pr-4 mr-4" style={{'paddingTop':'100px'}}>
+          <div className="row pr-4 mr-4" style={{'paddingTop':'160px'}}>
           
             <FeatureItem
               icon="query_builder"
