@@ -5,7 +5,9 @@ import { enGB } from 'date-fns/locale'
 import { DatePickerCalendar } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
 import { useEffect } from 'react';
+import Speech from './Speech';
 import { UserContext } from '../../useAuth';
+import WebCamCapture from "./WebCam"
 import {useHistory} from 'react-router-dom'
 
 const Calender = () => {
@@ -22,6 +24,8 @@ const Calender = () => {
     handleSelectDate(formatDate)
   }, [date])
 
+
+  
   return (
     <>
       <div className="bg-white sidebar-content shadow p-2 text-center">
@@ -46,7 +50,12 @@ const HeaderBottom = ({ history }) => {
       history.push('/login');
     }
   }
-  
+  const chatBot=()=>{
+    history.push('/chat')
+  }
+  const webcam=()=>{
+    history.push('/webcam')
+  }
   useEffect(() => {
     if (history.location.pathname === '/create-appointment') {
       setAppointment(true)
@@ -66,6 +75,23 @@ const HeaderBottom = ({ history }) => {
               <button type="button"
                 onClick={routeDecide}
                 className="btn mybtn">GET APPOINTMENT</button>
+                {/* <ChatIcon /> */}
+                <br></br>
+                <br></br>
+                
+                <button type="button"
+                onClick={chatBot}
+                className="btn mybtn">Click here to chat with the doctor</button>
+                <br></br>
+                <br></br>
+
+                <Speech />
+                <br />
+                
+                
+                <button type="button"
+                onClick={webcam}
+                className="btn mybtn">Webcam</button>
             </div>
           )}
 

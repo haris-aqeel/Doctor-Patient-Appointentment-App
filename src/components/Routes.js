@@ -9,6 +9,8 @@ import DashboardAppointmentPage from './pages/dashboard/Appointments/DashboardAp
 import Patients from './pages/dashboard/patients/Patients';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import NotFoundPage from './pages/NotFoundPage';
+import Chat from "./Chat";
+import Webcam from "./pages/homePagesComponents/WebCam"
 
 const Routes = () => {
   return (
@@ -24,8 +26,12 @@ const Routes = () => {
         </PrivateRoute>
         <Route path="/login" component={Login} />;
         <Route path="/signup" component={SignUp} />;
-
+        <Route path="/chat" component={Chat} />;
+        <Route path="/webcam" component={Webcam} />;
+        
         <Route path="*" component={NotFoundPage} />
+
+       
     </Switch>
   );
 };

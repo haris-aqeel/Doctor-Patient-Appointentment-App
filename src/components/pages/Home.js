@@ -7,9 +7,14 @@ const Home = () => {
   return (
     <div id="main-home-page">
       <Header />
+      <br />
+      <br />
+      <br />
+      
       <section className="header-bottom-content-aria">
         <div className="container">
-          <div className="row pr-4 mr-4">
+          <div className="row pr-4 mr-4" style={{'paddingTop':'100px'}}>
+          
             <FeatureItem
               icon="query_builder"
               title="Opening Hours"
