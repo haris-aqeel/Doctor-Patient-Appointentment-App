@@ -99,9 +99,7 @@ const HeaderBottom = ({ history }) => {
                 <br />
                 
                 
-                <button type="button"
-                onClick={webcam}
-                className="btn mybtn">Webcam</button>
+                
             </div>
           )}
 
