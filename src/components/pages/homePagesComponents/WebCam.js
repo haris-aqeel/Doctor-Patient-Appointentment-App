@@ -8,22 +8,28 @@ const WebcamCapture = () => {
 
     const capture = React.useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
+        localStorage.setItem("link",imageSrc);
         setImgSrc(imageSrc);
     }, [webcamRef, setImgSrc]);
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'center'}}>
-            <Webcam
+            {!imgSrc&&
+                <div>
+                
+                <Webcam
                 audio={false}
                 ref={webcamRef}
-                width={100}
-                height={100}
+                width={200}
+                height={200}
                 screenshotFormat="image/jpeg"
                 style={{borderRadius: '50px'}}
             />
-            <Button fullWidth variant="contained" color="secondary" onClick={capture} style={{margin: '50px'}}>
+            <Button fullWidth variant="contained" color="secondary" onClick={capture}>
                 Capture Photo
             </Button>
+            </div>
+            }
             {imgSrc && (
                 <img
                     src={imgSrc}

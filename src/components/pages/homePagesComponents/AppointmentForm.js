@@ -47,6 +47,7 @@ const AppointmentForm = (props) => {
         await axios.post(`https://edoctor-portal.herokuapp.com/api/v1/appointments`, formData)
         notify()
         setIsLoading(false)
+        localStorage.setItem("patient_data",JSON.stringify(formData));
         props.history.push('/create-appointment')
       } catch (error) {
         setIsLoading(false)

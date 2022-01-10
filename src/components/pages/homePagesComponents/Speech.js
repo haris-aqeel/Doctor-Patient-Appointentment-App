@@ -18,6 +18,13 @@ const Dictaphone = () => {
     if (transcript && transcript.toString().toLowerCase().includes('appointment')) {
       localStorage.getItem("status_login") === 'true' ? history.push('/create-appointment') : history.push('/login')
     }
+    else if (transcript && transcript.toString().toLowerCase().includes('chat')) {
+       history.push('/chat')
+    }
+    else if (transcript && transcript.toString().toLowerCase().includes('patient')) {
+      history.push('/patientinfo')
+   }
+
   }, [transcript])
 
 
@@ -33,6 +40,8 @@ const Dictaphone = () => {
       <Button variant="contained" color="primary" style={{ marginRight: '5px' }} onClick={SpeechRecognition.startListening}>Start</Button>
       <Button variant="contained" color="secondary" style={{ marginRight: '5px' }} onClick={SpeechRecognition.stopListening} >Stop</Button>
       <Button variant="contained" color="primary" style={{ marginRight: '5px' }} onClick={resetTranscript} >Reset</Button>
+      <br />
+      {transcript}
     </div>
   );
 };
