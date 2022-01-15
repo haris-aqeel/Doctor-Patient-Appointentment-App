@@ -16,5 +16,3 @@ A full-stack app where you can pick the date and time and fix an appointment wit
 - Material-UI
 - Bootstrap
 - Node.js
-- MongoDB
-- Heroku
