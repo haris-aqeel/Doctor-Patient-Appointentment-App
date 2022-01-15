@@ -1,31 +1,71 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import Speech from '../../pages/homePagesComponents/Speech'
-
+import { toast } from 'react-toastify';
+import { IconButton } from '@material-ui/core'
+import MicIcon from '@material-ui/icons/Mic';
+import MicOffIcon from '@material-ui/icons/MicOff';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import './Auth.css'
 
 
 const Dashboard = () => {
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
 
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [status, setStatus] = useState(true);
+
+
 
   const notify = (message) => toast(message);
 
+  if (!browserSupportsSpeechRecognition) {
+    setStatus(false);
+  }
 
+
+  const emailListener = () => {
+    resetTranscript();
+    SpeechRecognition.startListening();
+    setEmail(transcript)
+
+  }
+
+  const passwordListener = () => {
+    resetTranscript();
+    SpeechRecognition.startListening();
+    setPassword(transcript)
+
+
+
+  }
+
+  const loginListener = () => {
+    resetTranscript();
+    SpeechRecognition.startListening();
+    if (transcript && transcript.toString().toLowerCase().includes('login')) {
+      loginHandler();
+    }
+  }
 
 
   const loginHandler = (e) => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     if (email === '') {
       notify('Username/Email is required!');
       localStorage.setItem('status_login', 'false');
-    }else if (password === ''){
+    } else if (password === '') {
       notify('Password is required!');
       localStorage.setItem('status_login', 'false');
-    }else{
+    } else {
       localStorage.setItem('status_login', 'true');
       history.push('/');
     }
@@ -39,19 +79,34 @@ const Dashboard = () => {
             <div className="login__field">
               <i className="login__icon fas fa-user" />
               <input type="text" className="login__input" placeholder="User name / Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-              <Speech />
+
+              {status && <IconButton onClick={emailListener}>
+                {listening ? <MicIcon /> : <MicOffIcon />}
+              </IconButton>}
             </div>
             <div className="login__field">
               <i className="login__icon fas fa-lock" />
               <input type="password" className="login__input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              <Speech />
+              {status && <IconButton onClick={passwordListener}>
+                {listening ? <MicIcon /> : <MicOffIcon />}
+              </IconButton>}
             </div>
-            <button className="button login__submit" type="submit">
-              <span className="button__text">Log In Now</span>
-              <i className="button__icon fas fa-chevron-right" />
-              
-            </button>
-            <Speech />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center" }}>
+              <button className="button login__submit" type="submit">
+                <span className="button__text">Log In Now</span>
+                <i className="button__icon fas fa-chevron-right" />
+
+              </button>
+              {status &&
+                <>
+                <br/><br/>
+                <IconButton onClick={loginListener}>
+
+                  {listening ? <MicIcon /> : <MicOffIcon />}
+                </IconButton>
+                </>}
+
+            </div>
           </form>
         </div>
         <div className="screen__background">
