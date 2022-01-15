@@ -1,21 +1,19 @@
-import { useSpeechSynthesis } from "react-speech-kit";
+import { useSpeechSynthesis } from 'react-speech-kit';
 import React, { useState, useEffect, useContext } from 'react';
 const Speech = () => {
-// const [value, setValue] = React.useState("This is the appoinment page");
-// const [speak, setSpeak] = React.useState();
+	// const [value, setValue] = React.useState("This is the appoinment page");
+	// const [speak, setSpeak] = React.useState();
 
-// const { speak } = useSpeechSynthesis();
+	// const { speak } = useSpeechSynthesis();
 
+	useEffect(() => {
+		const msg = new window.SpeechSynthesisUtterance('This is appoinment page');
+		window.speechSynthesis.speak(msg);
+	}, []);
 
-
-useEffect(() => {
-    const msg = new window.SpeechSynthesisUtterance('This is appoinment page');
-    window.speechSynthesis.speak(msg);  
-}, [])
-
-return (
-	<div className="speech">
-	{/* <div className="group">
+	return (
+		<div className="speech">
+			{/* <div className="group">
 		<h2>Text To Speech Converter Using React Js</h2>
 	</div>
 	<div className="group">
@@ -30,9 +28,9 @@ return (
 		Speech
 		</button>
 	</div> */}
-    {/* <button onClick={speak({ text: "This is the appoinment page" })}>
+			{/* <button onClick={speak({ text: "This is the appoinment page" })}>
 		</button> */}
-	</div>
-);
+		</div>
+	);
 };
 export default Speech;
