@@ -14,9 +14,8 @@ function Chat() {
 
 	return (
 		<>
-			<h1 style={{textAlign: 'center', paddingTop: '30px'}}>CHATBOT</h1>
+			<h1 style={{ textAlign: 'center', paddingTop: '30px' }}>CHATBOT</h1>
 			<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '86vh' }}>
-
 				<Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
 			</div>
 		</>

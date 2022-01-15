@@ -9,7 +9,7 @@ const FeatureItem = ({ icon, title, subTitle, extraClass }) => {
 				</h6>
 				<div className="home-icons-container">
 					<h6>{title}</h6>
-					<p>{subTitle}</p>
+					<p style={{ fontSize: '15px' }}>{subTitle}</p>
 				</div>
 			</div>
 		</div>

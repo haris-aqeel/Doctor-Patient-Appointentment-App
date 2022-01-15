@@ -63,8 +63,9 @@ const HeaderBottom = ({ history }) => {
 	}, [history]);
 
 	return (
-		<section style={{marginTop: '60px'}}>
+		<section style={{ marginTop: '60px' }}>
 			<div className="row">
+				<div className="col-xl-7">{/* <div className="sidebar-image mr-2"></div> */}</div>
 				<div className="col-xl-5">
 					{appointment ? (
 						<Calender />
@@ -73,11 +74,12 @@ const HeaderBottom = ({ history }) => {
 							<h2 className="text-capitalize fwb">
 								Your new smile <br /> starts here
 							</h2>
-							<p className="py-2" style={{fontSize: '16px', fontWeight: 'bold'}}>
-								We have many patient amenities to make your dental experiences enjoyable and comfortable. We believe the difference is in the details! Your comfort is our top priority.
+							<p className="py-2" style={{ fontSize: '16px', fontWeight: 'bold' }}>
+								We have many patient amenities to make your dental experiences enjoyable and comfortable. We
+								believe the difference is in the details! Your comfort is our top priority.
 							</p>
 
-							<button type="button" onClick={patient} className="btn mybtn">
+							<button type="button" onClick={patient} className="btn mybtn ">
 								Patient Info
 							</button>
 							<br></br>
@@ -99,9 +101,6 @@ const HeaderBottom = ({ history }) => {
 							<br />
 						</div>
 					)}
-				</div>
-				<div className="col-xl-7">
-					<div className="sidebar-image mr-2"></div>
 				</div>
 			</div>
 		</section>

@@ -8,17 +8,29 @@ body {
 	font-weight: 700;
 }
 .main-home {
-	background: url('https://i.ibb.co/8YJs3MY/main-home2.png');
-	height: 800px;
+	background-color: #ccc;
+	background: linear-gradient(rgba(141, 153, 174, 0.8), rgba(141, 153, 174, 0.5)),
+		url('https://simplybook.me/build/images/dental.0419f54f.jpg') no-repeat fixed;
+
+	/* background:  linear-gradient(rgb(3, 3, 3), rgb(104, 104, 104)), url('https://simplybook.me/build/images/dental.0419f54f.jpg'); */
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100vh;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
+	width: 100vw;
 }
 .mybtn {
-	border-radius: 0;
-	padding: 15px 9px;
-	color: #fff;
-	outline: 0;
-	background-image: linear-gradient(to right, #19d3b0, #0fcfe8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(218, 218, 218);
+	border-radius: 15px;
+	box-shadow: 8px 8px 10px rgba(4, 57, 107, 0.3);
+	cursor: pointer;
+	position: relative;
+	animation: back 500ms 1;
+	padding: 12px 18px;
 }
 .appointments-item-btn {
 	border-radius: 0;
@@ -40,7 +52,8 @@ body {
 
 .mybtn:hover {
 	color: #fff;
-	background-image: linear-gradient(to left, #19d3b0, #0fcfe8);
+	background-image: #ccc;
+	color: black;
 }
 .appointments-item-btn:hover {
 	color: #fff;
@@ -77,30 +90,33 @@ body {
 }
 #main-home-navbar::after {
 	position: absolute;
-	height: 1300px;
+	height: 100px;
 	content: '';
-	width: 370px;
+	width: 1500px;
 	right: 0;
 	background: #3a4256;
 }
 section.header-bottom-content-aria {
 	margin-top: -150px;
+	background-color: #efefef;
 }
 .home-location {
-	background: #3a4256;
-	color: #fff;
-	transition: 1s;
 	cursor: pointer;
+	transition: 0.3s;
+	background-color: #b1b1b1;
+	box-shadow: 8px 8px 10px rgba(4, 57, 107, 0.3);
+	color: #000;
 }
 .home-primary {
 	cursor: pointer;
 	transition: 0.3s;
-	background: #1cc7c1;
-	color: #fff;
+	background-color: #b1b1b1;
+	box-shadow: 8px 8px 10px rgba(4, 57, 107, 0.3);
+	color: #000;
 }
 .main-home-icon {
 	font-size: 50px;
-	color: #fff;
+	color: #000;
 }
 .home-icons-container h6 {
 	font-weight: 700;
@@ -128,3 +144,78 @@ section.header-bottom-content-aria {
 
 
 */
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #dadada;
+	border-radius: 15px;
+	box-shadow: 8px 8px 10px rgba(4, 57, 107, 0.3);
+	cursor: pointer;
+	position: relative;
+	animation: back 500ms 1;
+}
+@keyframes back {
+	from {
+		transform: scale(0.95);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+.button--active {
+	animation: push 500ms 1;
+	box-shadow: inset 2px 2px 5px -2px rgba(4, 57, 107, 0.7);
+	transform: scale(0.95);
+}
+@keyframes push {
+	10% {
+		box-shadow: 8px 8px 10px rgba(4, 57, 107, 0);
+	}
+	50% {
+		transform: scale(1.1);
+		box-shadow: inset 2px 2px 5px -2px rgba(4, 57, 107, 0.4);
+	}
+	100% {
+		box-shadow: inset 2px 2px 5px -2px rgba(4, 57, 107, 0.7);
+		transform: scale(0.95);
+	}
+}
+.button--active .button__item {
+	box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+.button__item {
+	box-shadow: -5px -5px 10px #fff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 15px;
+}
+.button--size-small {
+	width: 50px;
+	height: 50px;
+}
+.button--size-medium {
+	width: 90px;
+	height: 90px;
+	padding: 5px;
+}
+.button--pop {
+	animation: pop 500ms 1;
+}
+@keyframes pop {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
