@@ -70,9 +70,8 @@ const Dashboard = () => {
 			<div className="screen">
 				<div className="screen__content">
 					<form className="login" onSubmit={loginHandler}>
-          
 						<div className="login__field">
-            <EmailIcon className='login__icon' style={{paddingRight:"5px",paddingLeft:"3px"}}/>
+							<EmailIcon className="login__icon" style={{ paddingRight: '5px', paddingLeft: '3px' }} />
 							<input
 								type="text"
 								className="login__input"
@@ -86,7 +85,7 @@ const Dashboard = () => {
 							)}
 						</div>
 						<div className="login__field">
-            <VisibilityIcon className='login__icon' style={{paddingRight:"5px",paddingLeft:"3px"}}/>
+							<VisibilityIcon className="login__icon" style={{ paddingRight: '5px', paddingLeft: '3px' }} />
 							<input
 								type="password"
 								className="login__input"
@@ -107,11 +106,9 @@ const Dashboard = () => {
 						>
 							<button className="button login__submit" type="submit">
 								<span className="button__text">Log In Now</span>
-								
 							</button>
 							{status && (
 								<>
-								
 									<br />
 									<IconButton onClick={loginListener}>{listening ? <MicIcon /> : <MicOffIcon />}</IconButton>
 								</>

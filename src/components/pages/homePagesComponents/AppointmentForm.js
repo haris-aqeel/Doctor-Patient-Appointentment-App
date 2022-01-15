@@ -141,9 +141,7 @@ const AppointmentForm = (props) => {
 										<button type="submit" className="btn appointment-submit text-uppercase w-100 text-white">
 											submit
 										</button>
-										
 									</div>
-									
 								</form>
 							</div>
 						</div>

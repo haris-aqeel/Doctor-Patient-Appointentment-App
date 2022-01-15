@@ -16,24 +16,26 @@ import VideoCall from '../client/Home';
 
 const Routes = () => {
 	return (
-		<Switch>
-			<Route exact path="/" component={Home} />;
-			<Route path="/create-appointment" component={AppointmentPage} />;
-			<Route path="/appointment-form" component={AppointmentForm} />;
-			<PrivateRoute path="/dashboard/appointment">
-				<DashboardAppointmentPage />
-			</PrivateRoute>
-			<PrivateRoute path="/dashboard/patients">
-				<Patients />
-			</PrivateRoute>
-			<Route path="/login" component={Login} />;
-			<Route path="/signup" component={SignUp} />;
-			<Route path="/chat" component={Chat} />;
-			<Route path="/webcam" component={Webcam} />;
-			<Route path="/patientinfo" component={PatientInfo} />;
-			<Route path="/Videocall" component={VideoCall} />;
-			<Route path="*" component={NotFoundPage} />
-		</Switch>
+		<div style={{ backgroundColor: '#efefef' }}>
+			<Switch>
+				<Route exact path="/" component={Home} />;
+				<Route path="/create-appointment" component={AppointmentPage} />;
+				<Route path="/appointment-form" component={AppointmentForm} />;
+				<PrivateRoute path="/dashboard/appointment">
+					<DashboardAppointmentPage />
+				</PrivateRoute>
+				<PrivateRoute path="/dashboard/patients">
+					<Patients />
+				</PrivateRoute>
+				<Route path="/login" component={Login} />;
+				<Route path="/signup" component={SignUp} />;
+				<Route path="/chat" component={Chat} />;
+				<Route path="/webcam" component={Webcam} />;
+				<Route path="/patientinfo" component={PatientInfo} />;
+				<Route path="/Videocall" component={VideoCall} />;
+				<Route path="*" component={NotFoundPage} />
+			</Switch>
+		</div>
 	);
 };
 

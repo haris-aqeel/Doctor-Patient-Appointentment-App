@@ -16,10 +16,12 @@ const AvailableAppointments = ({ date }) => {
 	}, []);
 
 	return (
-		<div className="container availableAppoitments-container">
+		<div className="container availableAppoitments-container" style={{ marginTop: '100px', backgroundColor: '#efefef' }}>
 			<div className="row ">
 				<div className="col section-title text-center">
-					<h2 className="text-center fwb cp">Available Appointments on {selectTedDate}</h2>
+					<h2 className="text-center fwb cp" style={{ color: 'black' }}>
+						Available Appointments on {selectTedDate}
+					</h2>
 				</div>
 			</div>
 			<div className="available-items-container pt-4">
