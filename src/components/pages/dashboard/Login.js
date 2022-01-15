@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import Speech from '../../pages/homePagesComponents/Speech'
 
 import './Auth.css'
 
@@ -38,15 +39,19 @@ const Dashboard = () => {
             <div className="login__field">
               <i className="login__icon fas fa-user" />
               <input type="text" className="login__input" placeholder="User name / Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Speech />
             </div>
             <div className="login__field">
               <i className="login__icon fas fa-lock" />
               <input type="password" className="login__input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+              <Speech />
             </div>
             <button className="button login__submit" type="submit">
               <span className="button__text">Log In Now</span>
               <i className="button__icon fas fa-chevron-right" />
+              
             </button>
+            <Speech />
           </form>
         </div>
         <div className="screen__background">
