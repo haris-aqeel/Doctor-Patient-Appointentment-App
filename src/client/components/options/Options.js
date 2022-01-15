@@ -46,9 +46,10 @@ const Options = () => {
   } = useContext(VideoContext);
 
   useEffect(() => {
-    if (isModalVisible) {
+    if (isModalVisible && Audio && Audio.current) {
       Audio.current.play();
-    } else {Audio.current.pause()
+    } else if (Audio && Audio.current) {
+      Audio.current.pause()
     };
   }, [isModalVisible]);
 

@@ -7,15 +7,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WebcamCapture from './WebCam';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
+import { Button } from '@material-ui/core';
+
 const AppointmentForm = (props) => {
-  // successfully msg
   const notify = () => toast("Your Appoitnment Add Successfully!");
   const { selectTedDate, cleaning } = useContext(UserContext)
-
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false);
+
+
   const onCangeHandler = e => {
     const { name, value } = e.target;
     if (name === 'name') {
@@ -29,6 +31,9 @@ const AppointmentForm = (props) => {
     }
   }
 
+  const handleRouteVideo = () => {
+    props.history.push('/Videocall')
+  }
 
   const submitHandler = async e => {
     e.preventDefault()
@@ -47,7 +52,7 @@ const AppointmentForm = (props) => {
         await axios.post(`https://edoctor-portal.herokuapp.com/api/v1/appointments`, formData)
         notify()
         setIsLoading(false)
-        localStorage.setItem("patient_data",JSON.stringify(formData));
+        localStorage.setItem("patient_data", JSON.stringify(formData));
         props.history.push('/create-appointment')
       } catch (error) {
         setIsLoading(false)
@@ -71,8 +76,17 @@ const AppointmentForm = (props) => {
           <div className="col-5">
             <div className="appointment-form-page-container">
               <div className="appointment-form shadow">
-              <VideoCallIcon />
-                <WebcamCapture/>
+                <Button
+
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={handleRouteVideo}
+                  startIcon={<VideoCallIcon />}
+                >
+                  Start Video Call
+                </Button>
+                <WebcamCapture />
                 <h2 className="text-center pb-4">{cleaning.name}</h2>
                 <form autoComplete="off" className="mt-4" onSubmit={submitHandler}>
                   <div className="form-group">
@@ -80,7 +94,7 @@ const AppointmentForm = (props) => {
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" required name="name" value={name} onChange={onCangeHandler} placeholder="Your Name" />
-                    
+
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" required name="phone" value={phone} onChange={onCangeHandler} placeholder="Phone Number" />

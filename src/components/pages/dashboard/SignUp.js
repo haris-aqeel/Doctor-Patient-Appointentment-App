@@ -64,7 +64,8 @@ const Dashboard = () => {
   
   
     const signupHandler = (e) => {
-      e.preventDefault();
+      
+      e && e.preventDefault();
       if (email === '') {
         notify('Username/Email field is required!');
         localStorage.setItem('status_login', 'false');
@@ -107,6 +108,7 @@ const Dashboard = () => {
                 {listening ? <MicIcon /> : <MicOffIcon />}
               </IconButton>}
             </div>
+            <div style={{display: 'flex', alignItems: 'center'}}>
             <button className="button login__submit">
               <span className="button__text">Sign Up</span>
               <i className="button__icon fas fa-chevron-right" />
@@ -118,7 +120,8 @@ const Dashboard = () => {
 
                   {listening ? <MicIcon /> : <MicOffIcon />}
                 </IconButton>
-                </>} 
+                </>}
+                </div> 
           </form>
         </div>
         <div className="screen__background">
