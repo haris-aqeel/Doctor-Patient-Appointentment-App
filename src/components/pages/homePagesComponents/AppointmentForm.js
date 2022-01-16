@@ -6,7 +6,7 @@ import Loading from '../../uttiles/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WebcamCapture from './WebCam';
-
+import VideoCallIcon from '@material-ui/icons/VideoCall';
 const AppointmentForm = (props) => {
   // successfully msg
   const notify = () => toast("Your Appoitnment Add Successfully!");
@@ -71,6 +71,7 @@ const AppointmentForm = (props) => {
           <div className="col-5">
             <div className="appointment-form-page-container">
               <div className="appointment-form shadow">
+              <VideoCallIcon />
                 <WebcamCapture/>
                 <h2 className="text-center pb-4">{cleaning.name}</h2>
                 <form autoComplete="off" className="mt-4" onSubmit={submitHandler}>
@@ -79,6 +80,7 @@ const AppointmentForm = (props) => {
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" required name="name" value={name} onChange={onCangeHandler} placeholder="Your Name" />
+                    
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" required name="phone" value={phone} onChange={onCangeHandler} placeholder="Phone Number" />

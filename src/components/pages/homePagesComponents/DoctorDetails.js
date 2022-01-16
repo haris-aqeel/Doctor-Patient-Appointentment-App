@@ -6,6 +6,11 @@ const Header = (props) => {
     const [patientData,setpatientData] = useState(null);
     const [picture,setpicture] = useState(null);
 
+    useEffect(() => {
+      const msg = new window.SpeechSynthesisUtterance('This is patient Information page');
+      window.speechSynthesis.speak(msg);  
+  }, [])
+
     
     useEffect(()=>{
        const patient=JSON.parse(localStorage.getItem("patient_data"))

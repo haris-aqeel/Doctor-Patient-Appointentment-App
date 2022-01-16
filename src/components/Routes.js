@@ -12,6 +12,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Chat from "./Chat";
 import Webcam from "./pages/homePagesComponents/WebCam";
 import PatientInfo from "./pages/homePagesComponents/DoctorDetails";
+import VideoCall from "../client/Home"
 
 const Routes = () => {
   return (
@@ -30,6 +31,8 @@ const Routes = () => {
         <Route path="/chat" component={Chat} />;
         <Route path="/webcam" component={Webcam} />;
         <Route path="/patientinfo" component={PatientInfo} />;
+        <Route path="/Videocall" component={VideoCall} />;
+        
         
         
         <Route path="*" component={NotFoundPage} />

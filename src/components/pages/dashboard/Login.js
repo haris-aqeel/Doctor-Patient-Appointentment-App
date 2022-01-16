@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { IconButton } from '@material-ui/core'
@@ -20,6 +20,11 @@ const Dashboard = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState(true);
+
+  useEffect(() => {
+    const msg = new window.SpeechSynthesisUtterance('This is the login page');
+    window.speechSynthesis.speak(msg);  
+}, [])
 
 
 
