@@ -23,7 +23,7 @@ const Header = (props) => {
 		}
 	}, []);
 	return (
-		<section className="App" style={{backgroundColor:"#A7C7E7"}}>
+		<section className="App" style={{ backgroundColor: '#A7C7E7' }}>
 			<div className="container">
 				<header>{/* <Navbar /> */}</header>
 				<div>

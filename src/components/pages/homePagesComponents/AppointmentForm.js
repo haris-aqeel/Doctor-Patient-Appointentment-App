@@ -65,12 +65,11 @@ const AppointmentForm = (props) => {
 	if (isLoading) {
 		return <Loading />;
 	}
-	const clear=()=>{
-		setName("");
-		setEmail("");
-		setPhone("");
-
-	}
+	const clear = () => {
+		setName('');
+		setEmail('');
+		setPhone('');
+	};
 
 	return (
 		<section id="appointment-form-page">
@@ -147,13 +146,15 @@ const AppointmentForm = (props) => {
 										<button type="submit" className="btn appointment-submit text-uppercase text-white">
 											submit
 										</button>
-										<button className="btn appointment-submit text-uppercase  text-white" onClick={()=>{clear()}}>
+										<button
+											className="btn appointment-submit text-uppercase  text-white"
+											onClick={() => {
+												clear();
+											}}
+										>
 											clear
 										</button>
 									</div>
-									
-										
-									
 								</form>
 							</div>
 						</div>

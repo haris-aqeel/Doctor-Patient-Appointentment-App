@@ -29,7 +29,7 @@ const WebcamCapture = () => {
 						width={400}
 						height={200}
 						screenshotFormat="image/jpeg"
-						style={{ borderRadius: '50px' ,paddingTop:"10px",paddingBottom:"10px"}}
+						style={{ borderRadius: '50px', paddingTop: '10px', paddingBottom: '10px' }}
 					/>
 					<Button fullWidth variant="contained" color="secondary" onClick={capture}>
 						Capture Photo
