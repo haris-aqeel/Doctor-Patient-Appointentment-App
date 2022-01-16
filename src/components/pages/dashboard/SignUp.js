@@ -5,7 +5,8 @@ import { IconButton } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic';
 import MicOffIcon from '@material-ui/icons/MicOff';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import EmailIcon from '@material-ui/icons/Email';
 import './Auth.css';
 
 const Dashboard = () => {
@@ -76,7 +77,7 @@ const Dashboard = () => {
 				<div className="screen__content">
 					<form className="login" onSubmit={signupHandler}>
 						<div className="login__field">
-							<i className="login__icon fas fa-user" />
+						<EmailIcon className='login__icon' style={{paddingRight:"5px",paddingLeft:"3px"}}/>
 							<input
 								type="text"
 								className="login__input"
@@ -89,7 +90,7 @@ const Dashboard = () => {
 							)}
 						</div>
 						<div className="login__field">
-							<i className="login__icon fas fa-lock" />
+						<VisibilityIcon className='login__icon' style={{paddingRight:"5px",paddingLeft:"3px"}}/>
 							<input
 								type="password"
 								className="login__input"
@@ -102,7 +103,7 @@ const Dashboard = () => {
 							)}
 						</div>
 						<div className="login__field">
-							<i className="login__icon fas fa-lock" />
+						<VisibilityIcon className='login__icon' style={{paddingRight:"5px",paddingLeft:"3px"}}/>
 							<input
 								type="password"
 								className="login__input"
@@ -119,7 +120,7 @@ const Dashboard = () => {
 						<div style={{ display: 'flex', alignItems: 'center' }}>
 							<button className="button login__submit">
 								<span className="button__text">Sign Up</span>
-								<i className="button__icon fas fa-chevron-right" />
+								
 							</button>
 							{status && (
 								<>
