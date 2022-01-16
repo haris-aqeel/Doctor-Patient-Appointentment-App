@@ -13,12 +13,13 @@ function Chat() {
 	}, []);
 
 	return (
-		<>
+		<div style={{backgroundColor:"#A7C7E7"}}>
+
 			<h1 style={{ textAlign: 'center', paddingTop: '30px' }}>CHATBOT</h1>
 			<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '86vh' }}>
 				<Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
 			</div>
-		</>
+		</div>
 	);
 }
 export default Chat;

@@ -65,6 +65,12 @@ const AppointmentForm = (props) => {
 	if (isLoading) {
 		return <Loading />;
 	}
+	const clear=()=>{
+		setName("");
+		setEmail("");
+		setPhone("");
+
+	}
 
 	return (
 		<section id="appointment-form-page">
@@ -84,7 +90,7 @@ const AppointmentForm = (props) => {
 								</Button>
 								<WebcamCapture />
 								<h2 className="text-center pb-4">{cleaning.name}</h2>
-								<form autoComplete="off" className="mt-4" onSubmit={submitHandler}>
+								<form autoComplete="off" className="mt-4" onSubmit={submitHandler} id="create-course-form">
 									<div className="form-group">
 										<input
 											type="text"
@@ -138,10 +144,16 @@ const AppointmentForm = (props) => {
 										/>
 									</div>
 									<div className="form-group">
-										<button type="submit" className="btn appointment-submit text-uppercase w-100 text-white">
+										<button type="submit" className="btn appointment-submit text-uppercase text-white">
 											submit
 										</button>
+										<button className="btn appointment-submit text-uppercase  text-white" onClick={()=>{clear()}}>
+											clear
+										</button>
 									</div>
+									
+										
+									
 								</form>
 							</div>
 						</div>
