@@ -142,18 +142,17 @@ const AppointmentForm = (props) => {
 											readOnly
 										/>
 									</div>
-									<div className="form-group">
-										<button type="submit" className="btn appointment-submit text-uppercase text-white">
-											submit
-										</button>
-										<button
-											className="btn appointment-submit text-uppercase  text-white"
+									<div>
+										<Button type="submit" className="btn text-uppercase text-white" fullWidth variant="contained" color="primary">Submit</Button>
+										<Button
+											fullWidth
+											className="btn text-uppercase  text-white mt-2" variant="contained" color="primary" 
 											onClick={() => {
 												clear();
 											}}
 										>
-											clear
-										</button>
+											Clear
+										</Button>
 									</div>
 								</form>
 							</div>

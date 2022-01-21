@@ -9,8 +9,8 @@ const Navbar = () => {
 		return false;
 	};
 	return (
-		<nav
-			className="navbar navbar-expand-lg navbar-light"
+		<nav 
+			className="navbar navbar-expand-lg navbar-light fixed-top sticky-top"
 			id="main-home-navbar"
 			style={{ backgroundColor: '#3a4256', width: '100vw' }}
 		>
