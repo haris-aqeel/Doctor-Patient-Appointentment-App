@@ -5,9 +5,11 @@ import { IconButton } from '@material-ui/core';
 import MicIcon from '@material-ui/icons/Mic';
 import MicOffIcon from '@material-ui/icons/MicOff';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { auth } from '../../../firebase/service'
 
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import EmailIcon from '@material-ui/icons/Email';
+
 import './Auth.css';
 
 const Dashboard = () => {
@@ -61,9 +63,23 @@ const Dashboard = () => {
 			notify('Password is required!');
 			localStorage.setItem('status_login', 'false');
 		} else {
-			localStorage.setItem('status_login', 'true');
-			history.push('/');
-		}
+			// history.push('/');
+			auth.signInWithEmailAndPassword(
+				email,
+				password
+			).then(user => {
+				localStorage.setItem('status_login', 'true');
+				localStorage.setItem('user_details', JSON.stringify(user))
+				history.push('/');
+				
+			}).catch(err => {
+				localStorage.setItem('status_login', 'false');
+				notify(err.message);
+				history.push('/login');
+
+			})
+		};
+
 	};
 
 	return (

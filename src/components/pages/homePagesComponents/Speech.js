@@ -16,7 +16,9 @@ const Dictaphone = () => {
 		} else if (transcript && transcript.toString().toLowerCase().includes('patient')) {
 			history.push('/patientinfo');
 		} else if (transcript && transcript.toString().toLowerCase().includes('login')) {
-			history.push('/');
+			history.push('/login');
+		}else if (transcript && transcript.toString().toLowerCase().includes('register')) {
+			history.push('/signup');
 		}
 	}, [transcript]);
 
